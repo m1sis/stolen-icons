@@ -1,1 +1,129 @@
-<img src="https://csweb.artic.edu/cs/CSPRD/cache/PT_HEADER_ALERTS_1.svg" alt="description of image">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Slideshow</title>
+    <style>
+      /* Styling for slideshow container */
+      body {
+        margin-top: 100px;
+        background: #7d7d7d;
+      }
+      
+      .slideshow-container {
+        max-width: 400px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      /* Styling for slides */
+      .mySlides {
+        display: none;
+      }
+
+      /* Styling for previous and next buttons */
+      .prev, .next {
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      /* Styling for previous button */
+      .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* Styling for next button */
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      /* Styling for dot indicators */
+      .dot {
+        display: inline-block;
+        margin: 0 2px;
+        cursor: pointer;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #bbb;
+        transition: background-color 0.6s ease;
+      }
+
+      /* Styling for active dot */
+      .active, .dot:hover {
+        background-color: #717171;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="slideshow-container">
+      <!-- Images to display in slideshow -->
+      <div class="mySlides">
+        <img src="PS_ADMISSIONS_L_FL_1.svg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="PS_ALERTS_L_FL_21860.svg" style="width:100%">
+      </div>
+
+      <div class="mySlides">
+        <img src="PT_HEADER_ALERTS_1.svg" style="width:100%">
+      </div>
+
+      <!-- Previous and next buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- Dot indicators -->
+    <br>
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- JavaScript for slideshow functionality -->
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+
+      function currentSlide(n) {
+        showSlides(slideIndex = n);
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+dots[i].className = dots[i].className.replace(" active", "");
+}
+slides[slideIndex-1].style.display = "block";
+dots[slideIndex-1].className += " active";
+}
+</script>
+
+  </body>
+</html>
