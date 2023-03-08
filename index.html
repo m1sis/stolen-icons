@@ -5,22 +5,29 @@
     <title>Slideshow</title>
     <style>
       /* Styling for slideshow container */
-      body {
-        margin-top: 100px;
-        background: #7d7d7d;
-      }
-      
       .slideshow-container {
-        max-width: 400px;
+        max-width: 800px;
         position: relative;
-        margin: 0 auto;
+        margin: auto;
       }
-
+      .redtext {
+        color: red;
+        font-size: 20px;
+      }
       /* Styling for slides */
       .mySlides {
-        display: none;
-      }
+  display: none; 
+  text-align: center; /* center the images */
+  word-wrap: break-word; /* add this rule to wrap text */
+}
 
+.mySlides img {
+  width: 70%;
+  max-height: 500px;
+  object-fit: contain;
+    margin-bottom: 10px;
+
+}
       /* Styling for previous and next buttons */
       .prev, .next {
         position: absolute;
@@ -62,24 +69,58 @@
 
       /* Styling for active dot */
       .active, .dot:hover {
-        background-color: #717171;
+        background-color: red;
+      }
+      body {
+        font-family: courier;
+        font-weight: bold;
+        color: white;
+        background-color: #7d7d7d;
+        margin: 20px;
+      }
+      .agreement {
+        font-size: 8px;
+        margin: 50px auto;
+      }
+      .title {
+        text-align: center;
+          font-size: 25;
+        margin: 10 auto;
       }
     </style>
   </head>
   <body>
-
+<div class="title">STOLEN ASSETS FROM SAIC SELF SERVICE</div>
     <div class="slideshow-container">
       <!-- Images to display in slideshow -->
       <div class="mySlides">
-        <img src="PS_ADMISSIONS_L_FL_1.svg" style="width:100%">
+        <img src="PS_BALANCE_L_FL_1.svg" style="width:70%">
+      PS_BALANCE_L_FL_1.svg
       </div>
 
       <div class="mySlides">
-        <img src="PS_ALERTS_L_FL_21860.svg" style="width:100%">
+        <img src="PS_ADMISSIONS_L_FL_1.svg" style="width:70%">
+      PS_ADMISSIONS_L_FL_1.svg
       </div>
 
       <div class="mySlides">
-        <img src="PT_HEADER_ALERTS_1.svg" style="width:100%">
+        <img src="PS_ALERTS_L_FL_21860.svg" style="width:70%">
+      PS_ALERTS_L_FL_21860.svg
+      </div>
+     
+      <div class="mySlides">
+      <img src="PS_PERF_STATUS_PIE_CHART_L_FL_1.svg" style="width:70%">
+      PS_PERF_STATUS_PIE_CHART_L_FL_1.svg
+      </div>
+
+      <div class="mySlides">
+        <img src="PT_HEADER_ALERTS_1.svg" style="width:70%">
+      PT_HEADER_ALERTS_1.svg
+      </div>
+
+      <div class="mySlides">
+        <img src="PTNUI_CLOSE_ICN_1.svg" style="width:70%">
+     PTNUI_CLOSE_ICN_1.svg
       </div>
 
       <!-- Previous and next buttons -->
@@ -93,36 +134,61 @@
       <span class="dot" onclick="currentSlide(1)"></span>
       <span class="dot" onclick="currentSlide(2)"></span>
       <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+      <span class="dot" onclick="currentSlide(5)"></span>
+      <span class="dot" onclick="currentSlide(6)"></span>
+    
     </div>
+    <div class="agreement">
+***************************************************************
+*  This software and related documentation are provided under a
+*  license agreement containing restrictions on use and
+*  disclosure and are protected by intellectual property
+*  laws. Except as expressly permitted in your license agreement
+*  or allowed by law, <div class="redtext">you may not use, copy, reproduce,
+*  translate, broadcast, modify, license, transmit, distribute,
+*  exhibit, perform, publish or display any part, in any form or
+*  by any means.</div>Reverse engineering, disassembly, or
+*  decompilation of this software, unless required by law for
+*  interoperability, is prohibited.
+*  The information contained herein is subject to change without
+*  notice and is not warranted to be error-free. If you find any
+*  errors, please report them to us in writing.
+*
+*  Copyright (C) 1988, 2015, Oracle and/or its affiliates.
+*  All Rights Reserved.
+* ***************************************************************
+</div>
 
-    <!-- JavaScript for slideshow functionality -->
+  <!-- JavaScript for slideshow functionality -->
     <script>
-      let slideIndex = 1;
-      showSlides(slideIndex);
+      var slideIndex = 1;
+showSlides(slideIndex);
 
-      function plusSlides(n) {
-        showSlides(slideIndex += n);
-      }
-
-      function currentSlide(n) {
-        showSlides(slideIndex = n);
-      }
-
-      function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("dot");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-dots[i].className = dots[i].className.replace(" active", "");
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
-slides[slideIndex-1].style.display = "block";
-dots[slideIndex-1].className += " active";
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
 }
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
 </script>
 
   </body>
