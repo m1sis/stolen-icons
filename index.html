@@ -8,26 +8,29 @@
       .slideshow-container {
         max-width: 800px;
         position: relative;
-        margin: auto;
+        margin: 10%;
       }
-      .redtext {
+
+      /* Styling for slides */
+      .mySlides {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px; 
+        text-align: center; /* center the images */
+      }
+      
+      .mySlides img {
+        width: 70%;
+        max-height: 500px;
+        object-fit: contain;
+      }
+
+.redtext {
         color: red;
         font-size: 20px;
       }
-      /* Styling for slides */
-      .mySlides {
-  display: none; 
-  text-align: center; /* center the images */
-  word-wrap: break-word; /* add this rule to wrap text */
-}
 
-.mySlides img {
-  width: 70%;
-  max-height: 500px;
-  object-fit: contain;
-    margin-bottom: 10px;
-
-}
       /* Styling for previous and next buttons */
       .prev, .next {
         position: absolute;
